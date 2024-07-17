@@ -15,5 +15,9 @@
   "workspaces": [
     "src/trans_backend",
     "src/trans_frontend"
-  ]
+  ],
+  "dependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21"
+  }
 }
