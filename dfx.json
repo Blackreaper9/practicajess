@@ -1,0 +1,50 @@
+{
+  "canisters": {
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    },
+    "trans_backend": {
+      "build": "npx azle trans_backend",
+      "candid": "src/trans_backend/trans_backend.did",
+      "gzip": true,
+      "main": "src/trans_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/trans_backend/trans_backend.wasm"
+    },
+    "trans_frontend": {
+      "dependencies": [
+        "trans_backend"
+      ],
+      "source": [
+        "src/trans_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "trans_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
